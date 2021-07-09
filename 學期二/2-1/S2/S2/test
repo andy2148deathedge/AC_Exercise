@@ -1,0 +1,29 @@
+const players = [
+  { name: 'Bernard', email: 'bernard@example.com', ticket: 'XL3558' },
+  { name: 'Youchi', email: 'youchi@example.com', ticket: 'AH9188' },
+  { name: 'Yenting', email: 'yenting@example.com', ticket: 'LO9903' },
+  { name: 'Angela', email: 'angela@example.com', ticket: 'HY7212' },
+  { name: 'Yvonne', email: 'yvonne@example.com', ticket: 'CH7684' },
+  { name: 'Ellen', email: 'ellen@example.com', ticket: 'BB1750' },
+  { name: 'Walter', email: 'walter@example.com', ticket: 'EI5724' },
+  { name: 'Tim', email: 'tim@example.com', ticket: 'CK4592' },
+  { name: 'Kevin', email: 'kevin@example.com', ticket: 'TT1804' },
+  { name: 'Russell', email: 'russell@example.com', ticket: 'SI0305' }
+]
+const blackList = [
+  { name: 'Tim', email: 'tim@example.com', ticket: 'CK4592' },
+  { name: 'Walter', email: 'walter@example.com', ticket: 'EI5724' },
+]
+console.log(blackList.length)
+//write your code
+//用迴圈+.includes()方法檢查是否存在需剔除元素
+for (i = 0; i < blackList.length; i++) {
+  if (players.includes(blackList[i])) {
+    //令j為預刪除元素之陣列索引值
+    j = players.indexOf(blackList[i])
+    //利用.splice()方法由索引值開始刪除1元素
+    players.splice(j, 1)
+  }
+}
+
+console.log(players) 
